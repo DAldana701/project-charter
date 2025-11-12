@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 
-<html lang="en"><head><title>Business-Aligned Job Hunt – Status Reports</title><style>
+<html lang="en">
+
+<head>
+    <title>Business-Aligned Job Hunt – Status Reports</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -16,7 +20,7 @@
             position: relative;
             overflow-x: hidden;
         }
-        
+
         /* Animated background particles */
         body::before {
             content: '';
@@ -30,12 +34,17 @@
             animation: float 20s infinite linear;
             z-index: -1;
         }
-        
+
         @keyframes float {
-            0% { transform: translateY(100vh); }
-            100% { transform: translateY(-100vh); }
+            0% {
+                transform: translateY(100vh);
+            }
+
+            100% {
+                transform: translateY(-100vh);
+            }
         }
-        
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -47,7 +56,7 @@
             margin-top: 20px;
             margin-bottom: 20px;
         }
-        
+
         .header {
             background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
             color: white;
@@ -56,7 +65,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .header::before {
             content: '';
             position: absolute;
@@ -68,12 +77,19 @@
             opacity: 0.1;
             animation: pulse 4s ease-in-out infinite;
         }
-        
+
         @keyframes pulse {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.2; }
+
+            0%,
+            100% {
+                opacity: 0.1;
+            }
+
+            50% {
+                opacity: 0.2;
+            }
         }
-        
+
         .header::after {
             content: '🎯💼📊';
             position: absolute;
@@ -82,13 +98,26 @@
             font-size: 24px;
             animation: bounce 2s infinite;
         }
-        
+
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
         }
-        
+
         .header h1 {
             font-size: clamp(28px, 4vw, 42px);
             font-weight: 700;
@@ -100,21 +129,21 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         body.dark-mode .header h1 {
             background: linear-gradient(45deg, #e2e8f0, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .header p {
             font-size: 18px;
             opacity: 0.9;
             position: relative;
             z-index: 1;
         }
-        
+
         .nav {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -124,14 +153,14 @@
             top: 0;
             z-index: 100;
         }
-        
+
         .nav-list {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             justify-content: center;
         }
-        
+
         .nav-item {
             color: black;
             padding: 8px 16px;
@@ -144,16 +173,16 @@
             color: rgb(0, 0, 0);
             text-decoration: none;
         }
-        
+
         .nav-item:hover {
             background: rgba(0, 0, 0, 0.2);
             transform: translateY(-2px);
         }
-        
+
         .content {
             padding: 40px;
         }
-        
+
         .student-info {
             background: linear-gradient(135deg, #f8fafc, #e2e8f0);
             border-radius: 16px;
@@ -162,20 +191,20 @@
             border: 1px solid #e2e8f0;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
-        
+
         .student-info h3 {
             color: #1a365d;
             margin-bottom: 24px;
             font-size: 24px;
             font-weight: 600;
         }
-        
+
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-        
+
         .info-item {
             background: white;
             padding: 20px;
@@ -185,7 +214,7 @@
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        
+
         .info-item::before {
             content: '';
             position: absolute;
@@ -198,17 +227,17 @@
             transition: all 0.6s ease;
             opacity: 0;
         }
-        
+
         .info-item:hover::before {
             opacity: 1;
             transform: rotate(45deg) translate(50%, 50%);
         }
-        
+
         .info-item:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
-        
+
         .info-label {
             font-weight: 600;
             color: #4a5568;
@@ -217,13 +246,13 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .info-value {
             color: #1a202c;
             font-size: 16px;
             font-weight: 500;
         }
-        
+
         .section {
             margin-bottom: 32px;
             background: white;
@@ -234,12 +263,12 @@
             transition: all 0.3s ease;
             transform: translateY(0);
         }
-        
+
         .section:hover {
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             transform: translateY(-2px);
         }
-        
+
         .section::before {
             content: '';
             position: absolute;
@@ -250,11 +279,11 @@
             background: linear-gradient(90deg, transparent, #667eea, transparent);
             transition: left 0.8s ease;
         }
-        
+
         .section:hover::before {
             left: 100%;
         }
-        
+
         .section-header {
             background: linear-gradient(135deg, #f8fafc, #edf2f7);
             padding: 24px 32px;
@@ -264,11 +293,11 @@
             transition: all 0.3s ease;
             position: relative;
         }
-        
+
         .section-header:hover {
             background: linear-gradient(135deg, #edf2f7, #e2e8f0);
         }
-        
+
         .section-title {
             margin: 0;
             color: #2d3748;
@@ -278,26 +307,26 @@
             align-items: center;
             gap: 12px;
         }
-        
+
         .collapse-icon {
             margin-left: auto;
             transition: transform 0.3s ease;
             font-size: 18px;
         }
-        
+
         .section.collapsed .collapse-icon {
             transform: rotate(-90deg);
         }
-        
+
         .section-content {
             padding: 32px;
             transition: all 0.3s ease;
         }
-        
+
         .section.collapsed .section-content {
             display: none;
         }
-        
+
         .instructions {
             background: linear-gradient(135deg, #ebf8ff, #bee3f8);
             border-left: 4px solid #3182ce;
@@ -307,13 +336,13 @@
             font-size: 14px;
             color: #2c5282;
         }
-        
+
         .instructions strong {
             display: block;
             margin-bottom: 12px;
             color: #2a4365;
         }
-        
+
         .placeholder {
             background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
             border: 2px dashed #0ea5e9;
@@ -322,12 +351,12 @@
             margin: 16px 0;
             color: #0c4a6e;
         }
-        
+
         .placeholder h3 {
             color: #075985;
             margin-bottom: 16px;
         }
-        
+
         .completed-work {
             background: linear-gradient(135deg, #f0fff4, #c6f6d5);
             border: 2px solid #38a169;
@@ -335,21 +364,21 @@
             padding: 20px;
             margin: 16px 0;
         }
-        
+
         .completed-header {
             color: #22543d;
             font-weight: 600;
             margin-bottom: 12px;
             font-size: 16px;
         }
-        
+
         .scope-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
             margin-top: 24px;
         }
-        
+
         .scope-card {
             background: linear-gradient(135deg, #fafafa, #f5f5f5);
             border-radius: 12px;
@@ -358,34 +387,34 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
-        
+
         .scope-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .scope-card.in-scope {
             border-left-color: #38a169;
             background: linear-gradient(135deg, #f0fff4, #e6fffa);
         }
-        
+
         .scope-card.roadmap {
             border-left-color: #3182ce;
             background: linear-gradient(135deg, #ebf8ff, #e6fffa);
         }
-        
+
         .scope-card.out-scope {
             border-left-color: #e53e3e;
             background: linear-gradient(135deg, #fff5f5, #fed7e2);
         }
-        
+
         .scope-card h4 {
             margin-top: 0;
             margin-bottom: 16px;
             font-size: 18px;
             font-weight: 600;
         }
-        
+
         .stakeholder-table {
             width: 100%;
             border-collapse: collapse;
@@ -394,7 +423,7 @@
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
-        
+
         .stakeholder-table th {
             background: linear-gradient(135deg, #2d3748, #4a5568);
             color: white;
@@ -403,25 +432,25 @@
             font-size: 14px;
             font-weight: 600;
         }
-        
+
         .stakeholder-table td {
             padding: 12px;
             border-bottom: 1px solid #e2e8f0;
             font-size: 13px;
             background: white;
         }
-        
+
         .stakeholder-table tr:hover td {
             background: #f7fafc;
         }
-        
+
         .deliverable-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             margin-top: 16px;
         }
-        
+
         .deliverable-card {
             background: linear-gradient(135deg, #fafafa, #f5f5f5);
             border-radius: 12px;
@@ -430,26 +459,26 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
-        
+
         .deliverable-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .deliverable-card h4 {
             margin: 0 0 12px 0;
             font-size: 16px;
             color: #2d3748;
             font-weight: 600;
         }
-        
+
         .deliverable-meta {
             font-size: 12px;
             color: #4a5568;
             margin: 8px 0 12px 0;
             font-weight: 500;
         }
-        
+
         .budget-table {
             width: 100%;
             border-collapse: collapse;
@@ -458,7 +487,7 @@
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
-        
+
         .budget-table th {
             background: linear-gradient(135deg, #2d3748, #4a5568);
             color: white;
@@ -467,18 +496,18 @@
             font-size: 14px;
             font-weight: 600;
         }
-        
+
         .budget-table td {
             padding: 12px 14px;
             border-bottom: 1px solid #e2e8f0;
             font-size: 13px;
             background: white;
         }
-        
+
         .budget-table tr:hover td {
             background: #f7fafc;
         }
-        
+
         .budget-note {
             background: linear-gradient(135deg, #fffbf0, #fef5e7);
             border: 1px solid #ed8936;
@@ -488,14 +517,14 @@
             font-size: 13px;
             color: #744210;
         }
-        
+
         .tool-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
             margin-top: 16px;
         }
-        
+
         .screenshot-card {
             background: white;
             border-radius: 12px;
@@ -504,46 +533,46 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
-        
+
         .screenshot-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .screenshot-card img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
             border: 1px solid #e2e8f0;
         }
-        
+
         .caption {
             font-size: 12px;
             color: #4a5568;
             margin-top: 8px;
             font-style: italic;
         }
-        
+
         .diagram {
             text-align: center;
             margin: 24px 0;
         }
-        
+
         .diagram img {
             max-width: 100%;
             height: auto;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         .power-interest-grid {
             margin: 24px 0;
         }
-        
+
         .grid-placeholder div {
             margin-bottom: 0 !important;
         }
-        
+
         .scroll-to-top {
             position: fixed;
             bottom: 30px;
@@ -560,228 +589,228 @@
             transition: all 0.3s ease;
             z-index: 1000;
         }
-        
+
         .scroll-to-top:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
-        
+
         /* Dark mode styles */
         body.dark-mode {
             background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
             color: #e2e8f0;
         }
-        
+
         body.dark-mode .container {
             background: rgba(26, 32, 44, 0.95);
         }
-        
+
         body.dark-mode .student-info {
             background: linear-gradient(135deg, #2d3748, #4a5568);
             border: 1px solid #4a5568;
         }
-        
+
         body.dark-mode .student-info h3 {
             color: #e2e8f0;
         }
-        
+
         body.dark-mode .info-item {
             background: #374151;
             color: #e2e8f0;
         }
-        
+
         body.dark-mode .info-label {
             color: #9ca3af;
         }
-        
+
         body.dark-mode .info-value {
             color: #f3f4f6;
         }
-        
+
         body.dark-mode .section {
             background: #374151;
             border: 1px solid #4a5568;
         }
-        
+
         body.dark-mode .section-header {
             background: linear-gradient(135deg, #4a5568, #6b7280);
         }
-        
+
         body.dark-mode .section-title {
             color: #f3f4f6;
         }
-        
+
         body.dark-mode .section-content {
             background: #374151;
         }
-        
+
         body.dark-mode .section-content h4 {
             color: #7dd3fc;
         }
-        
+
         body.dark-mode .section-content strong {
             color: #f8fafc;
         }
-        
+
         body.dark-mode .section-content p {
             color: #cbd5e1;
         }
-        
+
         body.dark-mode .section-content li {
             color: #e2e8f0;
         }
-        
+
         body.dark-mode .instructions {
             background: linear-gradient(135deg, #1e3a8a, #3730a3);
             color: #c7d2fe;
             border-left-color: #6366f1;
         }
-        
+
         body.dark-mode .instructions strong {
             color: #c7d2fe;
         }
-        
+
         body.dark-mode .placeholder {
             background: linear-gradient(135deg, #0c4a6e, #075985);
             border-color: #38bdf8;
             color: #bae6fd;
         }
-        
+
         body.dark-mode .placeholder h3 {
             color: #bae6fd;
         }
-        
+
         body.dark-mode .completed-work {
             background: linear-gradient(135deg, #14532d, #166534);
             border-color: #22c55e;
         }
-        
+
         body.dark-mode .completed-header {
             color: #86efac;
         }
-        
+
         body.dark-mode .scope-card {
             background: linear-gradient(135deg, #374151, #4b5563);
         }
-        
+
         body.dark-mode .scope-card.in-scope {
             background: linear-gradient(135deg, #14532d, #166534);
         }
-        
+
         body.dark-mode .scope-card.roadmap {
             background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
         }
-        
+
         body.dark-mode .scope-card.out-scope {
             background: linear-gradient(135deg, #7f1d1d, #991b1b);
         }
-        
+
         body.dark-mode .stakeholder-table th {
             background: linear-gradient(135deg, #1f2937, #374151);
         }
-        
+
         body.dark-mode .stakeholder-table td {
             background: #374151;
             border-bottom-color: #4a5568;
             color: #e2e8f0;
         }
-        
+
         body.dark-mode .stakeholder-table tr:hover td {
             background: #4b5563;
         }
-        
+
         body.dark-mode .deliverable-card {
             background: linear-gradient(135deg, #374151, #4b5563);
         }
-        
+
         body.dark-mode .deliverable-card h4 {
             color: #7dd3fc;
         }
-        
+
         body.dark-mode .deliverable-card strong {
             color: #f8fafc;
         }
-        
+
         body.dark-mode .deliverable-card li {
             color: #e2e8f0;
         }
-        
+
         body.dark-mode .deliverable-meta {
             color: #9ca3af;
         }
-        
+
         body.dark-mode .budget-table th {
             background: linear-gradient(135deg, #1f2937, #374151);
         }
-        
+
         body.dark-mode .budget-table td {
             background: #374151;
             border-bottom-color: #4a5568;
             color: #e2e8f0;
         }
-        
+
         body.dark-mode .budget-table tr:hover td {
             background: #4b5563;
         }
-        
+
         body.dark-mode .budget-note {
             background: linear-gradient(135deg, #451a03, #78350f);
             border-color: #f59e0b;
             color: #fbbf24;
         }
-        
+
         body.dark-mode .screenshot-card {
             background: #374151;
             border-color: #4a5568;
         }
-        
+
         body.dark-mode .caption {
             color: #9ca3af;
         }
-        
+
         body.dark-mode .nav {
             background: rgba(26, 32, 44, 0.8);
             border-bottom-color: rgba(74, 85, 104, 0.3);
         }
-        
+
         body.dark-mode .nav-item {
             background: rgba(74, 85, 104, 0.3);
             color: black;
             border-color: rgba(156, 163, 175, 0.2);
             color: #e2e8f0;
         }
-        
+
         body.dark-mode .nav-item:hover {
             background: rgba(107, 114, 128, 0.4);
         }
-        
+
         body.dark-mode .completion-tracker {
             background: rgba(26, 32, 44, 0.9);
         }
-        
+
         body.dark-mode .tracker-item {
             background: #4a5568;
         }
-        
+
         body.dark-mode .tracker-item::after {
             background: rgba(0, 0, 0, 0.9);
             color: white;
         }
-        
+
         /* Fix power-interest grid text in dark mode */
         body.dark-mode .power-interest-grid strong,
-body.dark-mode .power-interest-grid ul,
-body.dark-mode .power-interest-grid li {
-    color: #000000;
-}
-        
+        body.dark-mode .power-interest-grid ul,
+        body.dark-mode .power-interest-grid li {
+            color: #000000;
+        }
+
         /* Fix success metrics text in dark mode */
         body.dark-mode .placeholder h4,
-body.dark-mode .placeholder ul,
-body.dark-mode .placeholder li {
-    color: #000000;
-}
-        
+        body.dark-mode .placeholder ul,
+        body.dark-mode .placeholder li {
+            color: #000000;
+        }
+
         /* Dark mode toggle button */
         .theme-toggle {
             position: fixed;
@@ -802,15 +831,16 @@ body.dark-mode .placeholder li {
             align-items: center;
             justify-content: center;
         }
-        
+
         .theme-toggle:hover {
             transform: rotate(180deg) scale(1.1);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
-        
+
         body.dark-mode .theme-toggle {
             background: linear-gradient(135deg, #f59e0b, #f97316);
         }
+
         .progress-container {
             position: fixed;
             top: 0;
@@ -820,7 +850,7 @@ body.dark-mode .placeholder li {
             background: rgba(255, 255, 255, 0.1);
             z-index: 1000;
         }
-        
+
         .progress-bar {
             height: 4px;
             background: linear-gradient(90deg, #667eea, #764ba2);
@@ -828,7 +858,7 @@ body.dark-mode .placeholder li {
             transition: width 0.3s ease;
             box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
         }
-        
+
         /* Typewriter effect for project title */
         .typewriter {
             overflow: hidden;
@@ -838,17 +868,29 @@ body.dark-mode .placeholder li {
             letter-spacing: 0.1em;
             animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
         }
-        
+
         @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
         }
-        
+
         @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: orange; }
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: orange;
+            }
         }
-        
+
         /* Floating action buttons */
         .fab-container {
             position: fixed;
@@ -856,7 +898,7 @@ body.dark-mode .placeholder li {
             right: 30px;
             z-index: 1000;
         }
-        
+
         .fab {
             width: 56px;
             height: 56px;
@@ -872,21 +914,21 @@ body.dark-mode .placeholder li {
             justify-content: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
-        
+
         .fab-primary {
             background: linear-gradient(135deg, #667eea, #764ba2);
         }
-        
+
         .fab-secondary {
             background: linear-gradient(135deg, #38a169, #4299e1);
             font-size: 16px;
         }
-        
+
         .fab:hover {
             transform: scale(1.1) rotate(5deg);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
-        
+
         /* Completion tracker */
         .completion-tracker {
             position: fixed;
@@ -901,7 +943,7 @@ body.dark-mode .placeholder li {
             z-index: 100;
             display: none;
         }
-        
+
         .tracker-item {
             width: 12px;
             height: 12px;
@@ -911,12 +953,12 @@ body.dark-mode .placeholder li {
             transition: all 0.3s ease;
             position: relative;
         }
-        
+
         .tracker-item.active {
             background: linear-gradient(135deg, #667eea, #764ba2);
             transform: scale(1.3);
         }
-        
+
         .tracker-item::after {
             content: attr(data-section);
             position: absolute;
@@ -933,152 +975,574 @@ body.dark-mode .placeholder li {
             pointer-events: none;
             transition: opacity 0.3s ease;
         }
-        
+
         .tracker-item:hover::after {
             opacity: 1;
         }
-@media (max-width: 768px) {
+
+        @media (max-width: 768px) {
             .content {
                 padding: 24px;
             }
-            
+
             .nav {
                 padding: 16px 24px;
             }
-            
+
             .nav-list {
                 gap: 4px;
             }
-            
+
             .nav-item {
                 font-size: 12px;
                 padding: 6px 12px;
             }
-            
+
             .section-header {
                 padding: 20px 24px;
             }
-            
+
             .section-content {
                 padding: 24px;
             }
-            
+
             .info-grid,
             .scope-grid,
             .deliverable-grid,
             .tool-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .student-info {
                 padding: 24px;
             }
-            
+
             .header {
                 padding: 40px 24px;
             }
         }
-        
-        
-/* Smooth scrolling */
+
+
+        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
-        
+
         /* Loading animation */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         .section {
             animation: fadeInUp 0.6s ease-out forwards;
         }
-        
+
         .section:nth-child(even) {
             animation-delay: 0.1s;
         }
-        
+
         .section:nth-child(odd) {
             animation-delay: 0.2s;
         }
-    </style></head><body><div class="container"><div class="header"><h1 class="typewriter">Status Reports</h1><p>Weekly status updates for Business-Aligned Job Hunt</p></div><div class="nav"><div class="nav-list"><a class="nav-item" href="index.html">🏠 Project Charter</a><a class="nav-item" href="status.html">📅 Status Reports</a></div></div><div class="content"><div class="section" id="week6"><div class="section-header" onclick="toggleSection(this)"><h2 class="section-title">📅 Week 6 Status Report (Sep 21 – 27, 2025) – 🟡 At Risk</h2><div class="collapse-icon">▼</div></div><div class="section-content"><ul><li><strong>Progress: </strong>Completed ISC2 research (mission/vision/purpose), accessed CSULA Career Center resume builder, and analyzed job sites (Handshake, LinkedIn, Indeed).</li><li><strong>Challenges/Risks: </strong>Health issues caused delays. Mitigation: prioritized recovery and focused on lighter analysis tasks to maintain momentum.</li><li><strong>Next Steps: </strong>Create CC/account, review past application documents and conduct an assessment, and select target jobs.</li><li><strong>Project Health: </strong>🟡 At Risk</li></ul><p><strong>Reflection: </strong>Week 6 started rough due to health reasons, but I met key research milestones: leveraged the resume builder, reviewed ISC2 resources, and compared job platforms to prepare for upcoming applications.</p></div></div><div class="section" id="week7"><div class="section-header" onclick="toggleSection(this)"><h2 class="section-title">📅 Week 7 Status Report (Sep 28 – Oct 4, 2025) – 🟢 On Track</h2><div class="collapse-icon">▼</div></div><div class="section-content"><ul><li><strong>Progress: </strong>Reviewed past application documents and resumes, performed a self‑assessment, and continued job searching.</li><li><strong>Challenges/Risks: </strong>Difficulty finding reasonable roles on initial passes; may need to extend job selection/requirements timeline to ensure quality targets.</li><li><strong>Next Steps: </strong>Select reasonable jobs/internships, analyze requirements, and draft the updated resume.</li><li><strong>Project Health: </strong>🟢 On Track</li></ul><p><strong>Reflection: </strong>Focused on extracting strengths from prior resumes (including volunteer leadership examples) and began a deeper search. Handshake remains promising; will expand to LinkedIn and Indeed. If needed, I’ll extend the selection deadline to preserve quality.</p></div></div>
-<div class="section" id="week8">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">📅 Week 8 Status Report (Oct 5 – 11, 2025) – 🟢 On Track</h2>
-<div class="collapse-icon">▼</div>
-</div>
-<div class="section-content">
-<ul>
-<li><strong>Progress: </strong>Selected job targets, conducted job requirement analysis, and attended the CSULA Job Fair (Oct 9) to explore opportunities and practice professional networking.</li>
-<li><strong>Challenges/Risks: </strong>Fewer job options than expected may extend resume construction deadlines. Mitigation: adjust schedule slightly to maintain quality deliverables without burnout.</li>
-<li><strong>Next Steps: </strong>Construct resumes, request and incorporate feedback, and continue refining job selection and requirement analysis.</li>
-<li><strong>Project Health: </strong>🟢 On Track</li>
-</ul>
-<p><strong>Reflection: </strong>This week marked the transition into core project activities like resume building and interview preparation. I reviewed past applications, selected realistic positions, and attended the job fair for practical exposure. Future updates may include charter revisions and scope expansion toward broader business-aligned roles while maintaining focus on professional readiness and career alignment.</p>
-</div>
-</div>
-<div class="section" id="week9">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">📅 Week 9 Status Report (Oct 12 – 18, 2025) – 🟡 At Risk</h2>
-<div class="collapse-icon">▼</div>
-</div>
-<div class="section-content">
-<ul>
-<li><strong>Progress: </strong>Job searching, job requirement analysis, and began constructing a resume (first version completed).</li>
-<li><strong>Challenges/Risks: </strong>Core processes delayed due to motivation and schedule issues. <em>Mitigation:</em> Reclaim time, enforce the timeline, and catch up on core tasks.</li>
-<li><strong>Next Steps: </strong>Schedule stakeholder conversations, conduct feedback sessions, and review interviewing essentials.</li>
-<li><strong>Project Health: </strong>🟡 At Risk</li>
-</ul>
-<p><strong>Reflection: </strong>Progress dipped this week, and I extended key deadlines (e.g., resume construction and stakeholder feedback moved to Oct 25) while shifting the scope from CIS‑specific to a broader business focus with IS/IT alignment (e.g., business analyst, sales operations).</p>
-</div>
-</div>
-<div class="section" id="week10">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">📅 Week 10 Status Report (Oct 19 – 25, 2025) – 🟢 On Track</h2>
-<div class="collapse-icon">▼</div>
-</div>
-<div class="section-content">
-<ul>
-<li><strong>Progress: </strong>Maintained job hunting, constructed the resume, and obtained stakeholder feedback; identified several openings to apply to this week.</li>
-<li><strong>Challenges/Risks: </strong>No issues or risks identified for this period.</li>
-<li><strong>Next Steps: </strong>Apply to selected jobs, follow up with stakeholders on progress, and review interview skills.</li>
-<li><strong>Project Health: </strong>🟢 On Track</li>
-</ul>
-<p><strong>Reflection: </strong>Momentum improved. I’ll focus on applying mechanically to reduce fear of rejection and continue prepping for interviews (including mock interviews and skill reviews), integrating stakeholder advice as I go.</p>
-</div>
-</div>
-<div class="section" id="week11">
-<div class="section-header" onclick="toggleSection(this)">
-<h2 class="section-title">📅 Week 11 Status Report (Oct 26 – Nov 1, 2025) – 🟢 On Track</h2>
-<div class="collapse-icon">▼</div>
-</div>
-<div class="section-content">
-<ul>
-<li><strong>Progress: </strong>Updated Status HTML file, provided stakeholder feedback, prepared/drafted closure documents, and prepared/drafted final deliverables.</li>
-<li><strong>Challenges/Risks: </strong>No issues or risks identified for this reporting period.</li>
-<li><strong>Next Steps: </strong>Execute closure documents; finalize project progress (continue job searching and applying); and practice interviewing with stakeholders.</li>
-<li><strong>Project Health: </strong>🟢 On Track</li>
-</ul>
-<p>This week’s progress slowed slightly as core deliverables reached completion. I focused on preparing closure documents, stakeholder interviews, and final deliverables. I also provided feedback on peers’ charters to ensure project alignment with personal values. Overall, I’m satisfied with the journey and the progress made toward closure.</p>
-</div>
-</div>
-</div></div><script>
+
+        /* Paragraph and text spacing */
+        p {
+            margin-bottom: 16px;
+            /* space between paragraphs */
+            line-height: 1.7;
+            /* smoother, more readable text */
+        }
+
+        ul {
+            margin-bottom: 16px;
+            /* space after lists */
+        }
+
+        h3,
+        h4 {
+            margin-top: 24px;
+            /* space above subheadings */
+            margin-bottom: 12px;
+            /* space below subheadings */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="typewriter">Status Reports</h1>
+            <p>Weekly status updates for Business-Aligned Job Hunt</p>
+        </div>
+        <div class="nav">
+            <div class="nav-list"><a class="nav-item" href="index.html">🏠 Project Charter</a></div>
+        </div>
+        <div class="content">
+            <div class="nav-list">
+                <a class="nav-item" href="#week6">Week 6</a>
+                <a class="nav-item" href="#week7">Week 7</a>
+                <a class="nav-item" href="#week8">Week 8</a>
+                <a class="nav-item" href="#week9">Week 9</a>
+                <a class="nav-item" href="#week10">Week 10</a>
+                <a class="nav-item" href="#week11">Week 11</a>
+                <a class="nav-item" href="#week12">Week 12</a>
+            </div>
+            <div class="section" id="week12">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">📅 Week 12 Status Report (Nov 2 – 8, 2025) – 🟢 On Track</h2>
+                    <div class="collapse-icon">▼</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Executive Summary:</strong> Everything is on track as the project nears closure.
+                            This week focused on finalizing drafts for closure and deliverables, along with a complete
+                            textual overhaul of the project charter and status report webpages. No new processes were
+                            introduced, but the focus on refinement ensured quality and consistency across all
+                            documentation. Core deliverables remain active and are progressing toward completion.</li>
+
+                        <li><strong>Accomplishments This Week:</strong>
+                            <ul>
+                                <li>Drafted the final project packet and closure materials.</li>
+                                <li>Selected and confirmed potential interviewees for stakeholder engagement.</li>
+                                <li>Completed textual overhaul of project webpages to improve clarity and tone.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Issues & Risks / Mitigations:</strong>
+                            <ul>
+                                <li><strong>Issues:</strong> None identified during this reporting period.</li>
+                                <li><strong>Risks:</strong> None identified during this reporting period.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Plans for Next Week:</strong>
+                            <ul>
+                                <li>Begin visual overhaul of project webpages to align with final presentation quality.
+                                </li>
+                                <li>Contact and schedule interviews with selected stakeholders.</li>
+                                <li>Continue applying to available job positions relevant to project objectives.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Upcoming Milestones:</strong>
+                            <ul>
+                                <li><strong>Contact Interviewees – 11/15/2025:</strong> On Track</li>
+                                <li><strong>Update Project Webpages – 11/15/2025:</strong> On Track</li>
+                                <li><strong>Bite-Sized Lessons – 11/26/2025:</strong> At Risk</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Change Since Last Report:</strong> No changes occurred during this reporting period.
+                        </li>
+                        <br>
+                        <li><strong>Project Health:</strong> 🟢 On Track</li>
+                    </ul>
+
+                    <h4>Reflection:</h4>
+                    <p>
+                        This week’s progress centered on refining both the project charter and status report webpages,
+                        beginning with a complete textual overhaul. Core deliverables are moving into their final
+                        stages, and closure documentation is being finalized. I also began exploring stakeholder
+                        interviews to incorporate real-world perspectives into my final deliverables. These interviews
+                        will strengthen the project’s practical impact and provide hands-on experience in professional
+                        communication. As the project concludes, my focus remains on ensuring that all materials reflect
+                        professionalism, consistency, and readiness for public presentation—particularly on platforms
+                        like LinkedIn.
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="section" id="week11">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">📅 Week 11 Status Report (Oct 26 – Nov 1, 2025) – 🟢 On Track</h2>
+                    <div class="collapse-icon">▼</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Executive Summary: </strong>As the project approaches closure, progress this week
+                            focused on final preparations and peer collaboration. While the pace slowed slightly due to
+                            the transition toward completion, meaningful progress was made in updating project
+                            documentation, supporting stakeholder projects, and drafting closure and final deliverables.
+                            The project remains on track, demonstrating strong alignment with both professional goals
+                            and course objectives.</li>
+                        <li><strong>Accomplishments This Week:</strong>
+                            <ul>
+                                <li>Updated and refined the project’s Status HTML file.</li>
+                                <li>Provided feedback to multiple stakeholders on their project deliverables.</li>
+                                <li>Prepared draft versions of closure documentation and final deliverables.</li>
+                                <li>Contributed to peer learning by reviewing alignment between stakeholders’ goals and
+                                    project outcomes.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Issues & Risks / Mitigations:</strong>
+                            <ul>
+                                <li><strong>Issues:</strong> No issues identified during this reporting period.</li>
+                                <li><strong>Risks:</strong> Minor time constraints due to the number of closure tasks.
+                                </li>
+                                <li><strong>Mitigation:</strong> Maintain focused scheduling to ensure all closure and
+                                    documentation tasks are completed on time.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Plans for Next Week:</strong>
+                            <ul>
+                                <li>Execute and finalize closure documentation.</li>
+                                <li>Complete remaining deliverables and continue limited job-search activities.</li>
+                                <li>Conduct interview practice sessions with peers and professional stakeholders.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Upcoming Milestones:</strong>
+                            <ul>
+                                <li><strong>Interview Practice – 11/08/2025:</strong> At Risk</li>
+                                <li><strong>Stakeholder Feedback – 11/08/2025:</strong> On Track</li>
+                                <li><strong>Prepare Closure Documents – 11/08/2025:</strong> On Track</li>
+                            </ul>
+                        </li>
+                        <li><strong>Change Since Last Report:</strong> No changes occurred during this reporting period.
+                        </li>
+                        <br>
+                        <li><strong>Project Health: </strong>🟢 On Track</li>
+                    </ul>
+                    <h4>Reflection:</h4>
+                    <p>As the project nears its conclusion, this week’s focus was on finalizing deliverables and
+                        supporting peers through constructive feedback. I began drafting closure documentation and
+                        outlining interview sessions with a peer, a professor, and a manager from CHASE. Collaborating
+                        with classmates reinforced key project management principles such as alignment between goals,
+                        values, and execution. Although progress slowed slightly due to end-of-course transitions, this
+                        phase highlights how far I’ve come—growing from project planning and execution to reflection and
+                        mentorship. It’s rewarding to see both personal and professional development emerge through
+                        consistent engagement and perseverance.
+                    </p>
+                </div>
+            </div>
+            <div class="section" id="week10">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">📅 Week 10 Status Report (Oct 19 – 25, 2025) – 🟢 On Track</h2>
+                    <div class="collapse-icon">▼</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Executive Summary: </strong>The project remains on track, with steady progress made
+                            across key deliverables. The résumé has been finalized and stakeholder feedback
+                            incorporated, resulting in improved application readiness. Several job openings have been
+                            identified for targeted applications, marking the transition from planning to execution.
+                            Communication with stakeholders this week provided valuable insight into maintaining
+                            consistent follow-through and confidence in the application process.</li>
+                        <li><strong>Accomplishments This Week:</strong>
+                            <ul>
+                                <li>Conducted focused job hunting and identified multiple potential openings.</li>
+                                <li>Completed résumé construction and tailored it to professional standards.</li>
+                                <li>Held feedback sessions with stakeholders to refine job search strategies and résumé
+                                    quality.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Issues & Risks / Mitigations:</strong>
+                            <ul>
+                                <li><strong>Issues:</strong> No issues identified during this reporting period.</li>
+                                <li><strong>Risks:</strong> Minor scheduling delays may occur due to the application
+                                    process workload.</li>
+                                <li><strong>Mitigation:</strong> Maintain structured application timelines and continue
+                                    periodic stakeholder communication to ensure sustained progress.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Plans for Next Week:</strong>
+                            <ul>
+                                <li>Apply to selected internship and entry-level job positions.</li>
+                                <li>Follow up with stakeholders on application outcomes and progress.</li>
+                                <li>Begin reviewing and practicing core interviewing skills.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Upcoming Milestones:</strong>
+                            <ul>
+                                <li><strong>Practice Interviewing – 10/31/2025:</strong> On Track</li>
+                                <li><strong>Applying to Jobs – 10/31/2025:</strong> Delayed</li>
+                                <li><strong>Stakeholder Feedback – 10/31/2025:</strong> On Track</li>
+                            </ul>
+                        </li>
+                        <li><strong>Change Since Last Report:</strong> No changes occurred during this reporting period.
+                        </li>
+                        <br>
+                        <li><strong>Project Health: </strong>🟢 On Track</li>
+                    </ul>
+                    <h4>Reflection:</h4>
+                    <p> This week reflected a positive shift toward execution and confidence-building. Finalizing and
+                        tailoring my résumé provided a sense of readiness to apply, while stakeholder feedback
+                        emphasized the importance of applying logically rather than emotionally. I am beginning to view
+                        rejection as a normal part of the process rather than a failure. My next goal is to strengthen
+                        interview preparedness by studying mock interviews and analyzing effective communication traits.
+                        The key personal milestone ahead is overcoming hesitation and consistently applying to relevant
+                        roles to turn preparation into action. </p>
+                </div>
+            </div>
+            <div class="section" id="week9">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">📅 Week 9 Status Report (Oct 12 – 18, 2025) – 🟡 At Risk</h2>
+                    <div class="collapse-icon">▼</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Executive Summary: </strong>Project progress slowed this week due to reduced
+                            motivation and personal distractions. Although minimal progress was made, critical actions
+                            such as job searches, requirement analysis, and initial résumé construction were completed.
+                            In response to the slowdown, the project scope was adjusted to reflect a business-aligned
+                            focus, ensuring greater flexibility in identifying technology-related positions. Despite
+                            current delays, recovery plans are in place to bring the project back on track.</li>
+                        <li><strong>Accomplishments This Week:</strong>
+                            <ul>
+                                <li>Continued active job searching across multiple platforms.</li>
+                                <li>Conducted job requirement analyses for selected positions.</li>
+                                <li>Created the first draft of an updated résumé.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Issues & Risks / Mitigations:</strong>
+                            <ul>
+                                <li><strong>Issue:</strong> Core processes delayed due to decreased motivation and time
+                                    management challenges.</li>
+                                <li><strong>Risk Level:</strong> High</li>
+                                <li><strong>Mitigation:</strong> Implemented a focused recovery plan with revised
+                                    deadlines and dedicated project time blocks to restore progress consistency.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Plans for Next Week:</strong>
+                            <ul>
+                                <li>Schedule and conduct stakeholder feedback sessions on résumé drafts.</li>
+                                <li>Begin reviewing interview preparation materials.</li>
+                                <li>Continue refining and finalizing the résumé based on feedback.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Upcoming Milestones:</strong>
+                            <ul>
+                                <li><strong>Construct Résumés – 10/25/2025:</strong> At Risk</li>
+                                <li><strong>Stakeholder Feedback – 10/25/2025:</strong> Delayed</li>
+                                <li><strong>Interview Practice/Review – 10/24/2025:</strong> At Risk</li>
+                            </ul>
+                        </li>
+                        <li><strong>Change Since Last Report:</strong>
+                            <ul>
+                                <li><strong>Change #1 (2025-10-19):</strong> Project scope updated from a CIS focus to a
+                                    broader business-aligned framework. This adjustment captures technology-driven roles
+                                    under business functions such as business analysis, sales operations, and marketing
+                                    technology.</li>
+                                <li><strong>Change #2 (2025-10-19):</strong> Adjusted deadlines for résumé construction
+                                    and stakeholder feedback, extending them from October 18 to October 25 to allow time
+                                    for recovery and quality assurance.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Project Health:</strong> 🟡 At Risk</li>
+
+                    </ul>
+                    <h4>Reflection:</h4>
+                    <p> This week’s performance reflected a noticeable decline in motivation, leading to slower
+                        progress. While I continued to review job postings and conduct requirement analyses, the output
+                        was below expectations. Recognizing this, I extended deadlines for key deliverables to ensure
+                        quality outcomes rather than rushed submissions. The project’s scope shift from a CIS-specific
+                        to a business-aligned focus marks a major step forward—it broadens potential opportunities and
+                        aligns better with the interconnected nature of technology and business. Moving ahead, the focus
+                        will be on regaining consistency, improving time management, and re-engaging with the project
+                        through structured effort and stakeholder collaboration.</p>
+                </div>
+            </div>
+            <div class="section" id="week8">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">📅 Week 8 Status Report (Oct 5 – 11, 2025) – 🟢 On Track</h2>
+                    <div class="collapse-icon">▼</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Executive Summary: </strong>The project continues to perform well with only minor
+                            scheduling concerns. This week involved completing a job requirement analysis and attending
+                            the CSULA Job Fair on October 9 to explore career opportunities while practicing
+                            professional etiquette and communication. Although fewer job options were found than
+                            expected, overall progress remains steady, and the project is still on track to meet its
+                            goals.
+                        </li>
+                        <li><strong>Accomplishments This Week:</strong>
+                            <ul>
+                                <li>Selected target job positions for potential application.</li>
+                                <li>Completed job requirement analysis for selected roles.</li>
+                                <li>Attended the CSULA Job Fair to explore opportunities and strengthen professional
+                                    communication skills.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Issues & Risks / Mitigations:</strong>
+                            <ul>
+                                <li><strong>Issue:</strong> Minor delays due to limited job options and analysis
+                                    workload.</li>
+                                <li><strong>Risk Level:</strong> Low</li>
+                                <li><strong>Mitigation:</strong> Potentially extending certain deadlines, especially
+                                    résumé construction, to ensure high-quality results and balanced workload across
+                                    this project and other courses.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Plans for Next Week:</strong>
+                            <ul>
+                                <li>Construct and tailor professional résumés.</li>
+                                <li>Schedule or request stakeholder feedback on résumé drafts.</li>
+                                <li>Continue job selection and requirement analysis for additional positions.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Upcoming Milestones:</strong>
+                            <ul>
+                                <li><strong>Construct Résumés – 10/17/2025:</strong> On Track</li>
+                                <li><strong>Feedback Process – 10/17/2025:</strong> At Risk</li>
+                                <li><strong>Interview Practice (Early Review) – 10/17/2025:</strong> On Track</li>
+                            </ul>
+                        </li>
+                        <li><strong>Change Since Last Report:</strong> No formal changes occurred during this reporting
+                            period; however, revisions to the project charter, scope, and deadlines are anticipated in
+                            the upcoming week.</li>
+                        <br>
+                        <li><strong>Project Health: </strong>🟢 On Track</li>
+                    </ul>
+                    <h4>Reflection:</h4>
+                    <p> This week marked the start of key execution phases such as résumé construction, mock
+                        interviewing, and applying for positions. In addition to online research and requirement
+                        analysis, attending the CSULA Job Fair offered valuable firsthand experience in professionalism
+                        and networking. While no changes were implemented yet, several revisions are anticipated next
+                        week, including updates to the project charter and scope. These adjustments aim to shift the
+                        project toward a broader, business-aligned focus that still retains its career-readiness
+                        objectives within the College of Business and Economics.
+                    </p>
+                </div>
+            </div>
+            <div class="section" id="week7">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">📅 Week 7 Status Report (Sep 28 – Oct 4, 2025) – 🟢 On Track</h2>
+                    <div class="collapse-icon">▼</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Executive Summary: </strong>The project remains on track, with progress aligning
+                            closely to planned timelines. Some early challenges emerged in identifying suitable
+                            positions, which may lead to an extension of the job selection and requirement analysis
+                            phases. Despite this, the week’s goals were successfully achieved, maintaining steady
+                            project momentum and preparedness for the next phase.</li>
+                        <li><strong>Accomplishments This Week:</strong>
+                            <ul>
+                                <li>Reviewed past application documents for quality and relevance.</li>
+                                <li>Completed a self-assessment based on previous application materials.</li>
+                                <li>Initiated focused job searches using the Handshake platform.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Issues & Risks / Mitigations:</strong>
+                            <ul>
+                                <li><strong>Issues:</strong> No issues identified during this reporting period.</li>
+                                <li><strong>Risks:</strong> Limited internship availability may delay the job selection
+                                    phase.</li>
+                                <li><strong>Mitigation:</strong> Plan to expand the search scope to include LinkedIn and
+                                    Indeed, ensuring more opportunities are considered.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Plans for Next Week:</strong>
+                            <ul>
+                                <li>Select potential internships and job roles based on preferences and feasibility.
+                                </li>
+                                <li>Conduct a detailed job requirements analysis.</li>
+                                <li>Begin drafting an updated professional résumé.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Upcoming Milestones:</strong>
+                            <ul>
+                                <li><strong>Job Selection – 10/10/2025:</strong> At Risk</li>
+                                <li><strong>Job Requirement Analysis – 10/10/2025:</strong> At Risk</li>
+                                <li><strong>Resume Creation – 10/17/2025:</strong> On Track</li>
+                            </ul>
+                        </li>
+                        <li><strong>Change Since Last Report:</strong> No changes occurred during this reporting period.
+                        </li>
+                        <br>
+                        <li><strong>Project Health: </strong>🟢 On Track</li>
+                    </ul>
+                    <h4>Reflection:</h4>
+                    <p> This week centered on self-assessment and document review to identify strengths and
+                        opportunities for improvement in prior applications. Comparing past resumes helped clarify how
+                        my academic progress and new experiences should be represented. While the job search process
+                        proved challenging due to limited opportunities matching my goals, expanding research to
+                        LinkedIn and Indeed will increase exposure to relevant positions. Maintaining flexibility and
+                        realistic scheduling will be key to meeting future milestones.
+                    </p>
+                </div>
+            </div>
+            <div class="section" id="week6">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">📅 Week 6 Status Report (Sep 21 – 27, 2025) – 🟡 At Risk</h2>
+                    <div class="collapse-icon">▼</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Executive Summary: </strong>Due to sudden health issues, project progress slowed and
+                            placed the week’s goals at moderate risk. Despite these challenges, key research and
+                            analysis tasks were completed, including ISC2 research, job-site evaluation, and résumé
+                            template review. These foundational steps ensured that progress continued toward
+                            career-readiness objectives, even under constrained circumstances.</li>
+                        <li><strong>Accomplishments This Week:</strong>
+                            <ul>
+                                <li>Completed ISC2 research (vision, mission, and purpose statements).</li>
+                                <li>Reviewed and accessed the CSULA Career Center résumé builder.</li>
+                                <li>Conducted comparative job-site analysis across Handshake, LinkedIn, and Indeed.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Issues & Risks / Mitigations:</strong>
+                            <ul>
+                                <li><strong>Issue:</strong> Health-related interruptions reduced time available for
+                                    project tasks.</li>
+                                <li><strong>Risk Level:</strong> Medium</li>
+                                <li><strong>Mitigation:</strong> Focused on flexible research-based activities requiring
+                                    less time sensitivity while maintaining project momentum.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Plans for Next Week:</strong>
+                            <ul>
+                                <li>Create and verify ISC2 account and Career Center (CC) profile.</li>
+                                <li>Review past application documents and conduct a self-assessment.</li>
+                                <li>Select targeted jobs for résumé customization.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Upcoming Milestones:</strong>
+                            <ul>
+                                <li><strong>Resume Creation – 9/27/2025:</strong> On Track</li>
+                                <li><strong>Job Requirements Analysis – 10/04/2025:</strong> On Track</li>
+                                <li><strong>CC Research & ISC2 Account Creation – 10/04/2025:</strong> At Risk</li>
+                            </ul>
+                        </li>
+                        <li><strong>Change Since Last Report:</strong> No changes occurred during this reporting period.
+                        </li>
+                        <br>
+                        <li><strong>Project Health: </strong>🟡 At Risk</li>
+                    </ul>
+                    <h4>Reflection:</h4>
+                    <p>This week’s progress began under challenging health circumstances, but consistent effort ensured
+                        that essential tasks were completed. Analyzing career platforms revealed distinct advantages:
+                        Handshake as the most student-oriented, LinkedIn as the most professional, and Indeed as a
+                        balanced option. ISC2’s mission to promote cybersecurity worldwide aligns closely with my
+                        long-term career goals. Despite reduced hours, the work completed reflects both commitment and
+                        adaptability.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
         function toggleAllSections() {
             const sections = document.querySelectorAll('.section');
             const toggleAllBtn = document.getElementById('toggleAllBtn');
-            
+
             // Check current state - if majority are collapsed, expand all; if majority expanded, collapse all
             const collapsedSections = document.querySelectorAll('.section.collapsed').length;
             const totalSections = sections.length;
             const shouldExpand = collapsedSections > totalSections / 2;
-            
+
             sections.forEach((section, index) => {
                 // Add staggered animation delay
                 setTimeout(() => {
@@ -1089,7 +1553,7 @@ body.dark-mode .placeholder li {
                     }
                 }, index * 50); // 50ms delay between each section
             });
-            
+
             // Update button icon and add animation
             toggleAllBtn.style.transform = 'rotate(180deg) scale(1.2)';
             setTimeout(() => {
@@ -1101,9 +1565,9 @@ body.dark-mode .placeholder li {
         function toggleTheme() {
             const body = document.body;
             const themeIcon = document.getElementById('themeIcon');
-            
+
             body.classList.toggle('dark-mode');
-            
+
             if (body.classList.contains('dark-mode')) {
                 themeIcon.textContent = '☀️';
                 localStorage.setItem('theme', 'dark');
@@ -1116,7 +1580,7 @@ body.dark-mode .placeholder li {
         function toggleSection(header) {
             const section = header.parentElement;
             section.classList.toggle('collapsed');
-            
+
             // Add a little celebration effect when expanding
             if (!section.classList.contains('collapsed')) {
                 header.style.animation = 'pulse 0.6s ease';
@@ -1130,38 +1594,38 @@ body.dark-mode .placeholder li {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-                // Show/hide scroll to top button and update progress
-        
-window.onscroll = function() {
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    if (scrollToTopBtn) {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            scrollToTopBtn.style.display = "flex";
-        } else {
-            scrollToTopBtn.style.display = "none";
-        }
-    }
-};
+        // Show/hide scroll to top button and update progress
+
+        window.onscroll = function () {
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (scrollToTopBtn) {
+                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                    scrollToTopBtn.style.display = "flex";
+                } else {
+                    scrollToTopBtn.style.display = "none";
+                }
+            }
+        };
 
 
         // Smooth scrolling for navigation links
         // Smooth scrolling for navigation links (only for internal anchors)
-document.querySelectorAll('.nav-item').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href.startsWith('#')) {
-            e.preventDefault();
-            const targetElement = document.querySelector(href);
-            if (targetElement) {
-                targetElement.classList.remove('collapsed');
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        } else {
-            // For external or other-page links, allow normal navigation
-            window.location.href = href;
-        }
-    });
-});// Add intersection observer for fade-in animations
+        document.querySelectorAll('.nav-item').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        targetElement.classList.remove('collapsed');
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                } else {
+                    // For external or other-page links, allow normal navigation
+                    window.location.href = href;
+                }
+            });
+        });// Add intersection observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1177,16 +1641,16 @@ document.querySelectorAll('.nav-item').forEach(anchor => {
         }, observerOptions);
 
         // Initialize with all sections expanded and add animations
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Load saved theme
             const savedTheme = localStorage.getItem('theme');
             const themeIcon = document.getElementById('themeIcon');
-            
+
             if (savedTheme === 'dark') {
                 document.body.classList.add('dark-mode');
                 themeIcon.textContent = '☀️';
             }
-            
+
             // Set up initial fade-in animations
             const sections = document.querySelectorAll('.section');
             sections.forEach((section, index) => {
@@ -1199,7 +1663,7 @@ document.querySelectorAll('.nav-item').forEach(anchor => {
 
             // Show completion tracker after a delay
             setTimeout(() => {
-                
+
             }, 2000);
 
             // Add subtle animation to info items
@@ -1208,10 +1672,14 @@ document.querySelectorAll('.nav-item').forEach(anchor => {
                 item.style.animationDelay = `${index * 0.2}s`;
             });
         });
-    
-</script>
-<div aria-label="Floating actions" class="fab-container">
-<button aria-label="Back to Charter" class="fab fab-secondary" id="backToCharterBtn" onclick="window.location.href='index.html'" title="Back to Charter">🏠</button>
-<button aria-label="Scroll to Top" class="fab fab-primary" id="scrollToTopBtn" onclick="scrollToTop()" style="display:none;" title="Scroll to Top">↑</button>
-</div>
-</body></html>
+
+    </script>
+    <div aria-label="Floating actions" class="fab-container">
+        <button aria-label="Back to Charter" class="fab fab-secondary" id="backToCharterBtn"
+            onclick="window.location.href='index.html'" title="Back to Charter">🏠</button>
+        <button aria-label="Scroll to Top" class="fab fab-primary" id="scrollToTopBtn" onclick="scrollToTop()"
+            style="display:none;" title="Scroll to Top">↑</button>
+    </div>
+</body>
+
+</html>
